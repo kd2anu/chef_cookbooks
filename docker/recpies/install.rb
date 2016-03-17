@@ -12,3 +12,9 @@ end
 service "docker" do
   action :start
 end
+
+group "docker" do
+  action :modify
+  members ['ec2-user']
+  append true
+end
