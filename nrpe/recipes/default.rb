@@ -15,6 +15,7 @@ remote_directory "/usr/local/nagios" do
   owner "icinga"
   group "icinga"
   mode "0755"
+  recursive true
   action :create_if_missing
 end
 
