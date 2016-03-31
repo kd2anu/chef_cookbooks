@@ -19,7 +19,7 @@ remote_directory "/usr/local/nagios" do
 end
 
 execute "change_permission" do
-  command "sudo chown -R icinga:icinga /usr/local/nagios"
+  command "sudo chown -R icinga:icinga /usr/local/nagios/*"
 end
 
 template "/etc/init.d/nrpe" do
