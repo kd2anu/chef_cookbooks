@@ -19,9 +19,13 @@ remote_directory "/usr/local/nagios" do
   action :create_if_missing
 end
 
-execute "change_permission" do
-  command "sudo chown -R icinga:icinga /usr/local/nagios/*"
-  user "root"
+#execute "fix_permission" do
+#  command "sudo chown -R icinga:icinga /usr/local/nagios/*"
+#  user "root"
+#end
+
+bash "fix_permission" do
+  code "sudo chown -R icinga:icinga /usr/local/nagios/*"
 end
 
 template "/etc/init.d/nrpe" do
