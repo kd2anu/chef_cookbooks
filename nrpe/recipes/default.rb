@@ -20,6 +20,7 @@ end
 
 execute "change_permission" do
   command "sudo chown -R icinga:icinga /usr/local/nagios/*"
+  user "root"
 end
 
 template "/etc/init.d/nrpe" do
