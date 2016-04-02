@@ -43,5 +43,6 @@ end
 
 service "nrpe" do
   start_command "service nrpe start" 
+  supports :status => true, :restart => true, :reload => true
   action [:enable, :start]
 end
