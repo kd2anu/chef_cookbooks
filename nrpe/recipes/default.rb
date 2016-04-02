@@ -42,5 +42,6 @@ bash "add_service" do
 end
 
 service "nrpe" do
+  start_command "service nrpe start" 
   action [:enable, :start]
 end
