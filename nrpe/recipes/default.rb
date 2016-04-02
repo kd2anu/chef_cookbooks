@@ -42,7 +42,7 @@ bash "add_service" do
 end
 
 service "nrpe" do
-  start_command "service nrpe start" 
+  start_command "sudo service nrpe start" 
   supports :status => true, :restart => true, :reload => true
   action [:enable, :start]
 end
