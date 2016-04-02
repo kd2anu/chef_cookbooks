@@ -44,5 +44,5 @@ end
 service "nrpe" do
   start_command "sudo service nrpe start" 
   supports :status => true, :restart => true, :reload => true
-  action [:enable, :start]
+  action [:enable, :restart]
 end
