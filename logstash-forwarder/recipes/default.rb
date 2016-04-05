@@ -21,24 +21,21 @@ end
 #  user "root"
 #end
 
-template "/etc/init.d/logstash-forwarder.conf" do
-  source "logstash-forwarder.conf.erb"
+cookbook_file "/etc/init.d/logstash-forwarder.conf" do
+  source "logstash-forwarder.conf"
   mode "0755"
   owner "root"
   group "root"
+  action :create
 end
 
-template "/etc/pki/tls/certs/logstash-forwarder.crt" do
-  source "logstash-forwarder.crt.erb"
+cookbook_file "/etc/pki/tls/certs/logstash-forwarder.crt" do
+  source "logstash-forwarder.crt"
   mode "0755"
   owner "root"
   group "root"
+  action :create
 end
-
-#bash "add_service" do
-#  code "sudo chkconfig --add nrpe"
-#  not_if "chkconfig --list |grep -i nrpe"
-#end
 
 service "logstash-forwarder" do
   start_command "sudo service logstash-forwarder start" 
