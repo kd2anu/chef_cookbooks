@@ -21,7 +21,7 @@ end
 #  user "root"
 #end
 
-cookbook_file "/etc/init.d/logstash-forwarder.conf" do
+cookbook_file "/etc/logstash-forwarder.conf" do
   source "logstash-forwarder.conf"
   mode "0755"
   owner "root"
