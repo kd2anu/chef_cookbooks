@@ -11,11 +11,11 @@ execute 'unzip_jaxws' do
   group 'root'
   cwd '/opt'
   action :run
-  command 'unzip jaxws-ri-2.2.10.zip'
-  not_if do ::File.exists?('/opt/jaxws-ri-2.2.10.zip') end
+  command 'unzip /opt/jaxws-ri-2.2.10.zip /opt'
+#  not_if do ::File.exists?('/opt/jaxws-ri-2.2.10.zip') end
 end
 
-execute 'move' do
+execute 'move_jar' do
   user 'root'
   group 'root'
   cwd '/opt/jaxws-ri/lib'
