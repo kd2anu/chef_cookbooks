@@ -14,7 +14,11 @@
 include_recipe 'tomcat::service'
 
 node[:deploy].each do |application, deploy|
-  context_name = deploy[:document_root].nil? ? application : deploy[:document_root]
+#  context_name = deploy[:document_root].nil? ? application : deploy[:document_root]
+  context_name = application
+  puts "CONTEXT_NAME IS: #{context_name}"
+  puts "APPLICATION IS: #{application}"
+  puts "DEPLOY IS: #{deploy}"
 
   template "context file for #{application} (context name: #{context_name})" do
     path ::File.join(node['tomcat']['catalina_base_dir'], 'Catalina', 'localhost', "#{context_name}.xml")
