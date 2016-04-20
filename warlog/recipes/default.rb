@@ -4,7 +4,14 @@ node[:deploy].each do |application, deploy|
     source 'logging.properties.erb'
     owner node['tomcat']['user']
     group node['tomcat']['group']
-    mode 0640
+    mode 0644
     backup false
   end
+end
+
+directory '/var/log/coupons' do
+  owner 'tomcat'
+  group 'tomcat'
+  mode '0644'
+  action :create
 end
