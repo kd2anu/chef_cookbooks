@@ -12,6 +12,6 @@ end
 directory '/var/log/coupons' do
   owner 'tomcat'
   group 'tomcat'
-  mode '0644'
+  mode '0666'
   action :create
 end
