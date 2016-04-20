@@ -11,7 +11,7 @@ execute 'unzip_jaxws' do
   group 'root'
   cwd '/opt'
   action :run
-  command 'unzip /opt/jaxws-ri-2.2.10.zip /opt'
+  command 'unzip /opt/jaxws-ri-2.2.10.zip -d /opt'
 #  not_if do ::File.exists?('/opt/jaxws-ri-2.2.10.zip') end
 end
 
