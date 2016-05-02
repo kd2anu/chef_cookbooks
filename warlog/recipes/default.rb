@@ -8,10 +8,3 @@ node[:deploy].each do |application, deploy|
     backup false
   end
 end
-
-directory '/var/log/coupons' do
-  owner 'tomcat'
-  group 'tomcat'
-  mode '0766'
-  action :create
-end
