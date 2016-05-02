@@ -8,6 +8,8 @@ node[:deploy].each do |application, deploy|
     group node['tomcat']['group']
     mode 0644
     backup false
-    notifies :restart, resources(:service => 'tomcat')
   end
 end
+    
+
+notifies :restart, resources(:service => 'tomcat')
