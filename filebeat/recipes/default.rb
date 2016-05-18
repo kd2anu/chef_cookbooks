@@ -21,6 +21,11 @@ template '/etc/filebeat/filebeat.yml' do
   mode '0644'
 end
 
+bash 'verbose_output' do
+  code '/bin/sed -i "27s/\-c/\-v \-c/" /etc/init.d/filebeat'
+  user 'root'
+end
+
 template '/etc/pki/tls/certs/beats.crt' do
   source 'beats.crt.erb'
   owner 'root'
